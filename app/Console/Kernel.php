@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Jobs\SimulateScore;
 use App\Jobs\StartMatch;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -28,6 +29,7 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')
         //          ->hourly();
         $schedule->job(new StartMatch)->everyMinute();
+        $schedule->job(new SimulateScore())->everyMinute();
     }
 
     /**
