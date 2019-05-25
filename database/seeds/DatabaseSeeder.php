@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(BowlingStylesTableSeeder::class);
         $this->call(FieldingPositionsTableSeeder::class);
         $this->call(PlayersTableSeeder::class);
+        $this->call(MatchesTableSeeder::class);
     }
 }
