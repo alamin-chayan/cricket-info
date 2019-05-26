@@ -5,6 +5,7 @@
 /vendor
 .idea/*
 .env
+.env.bak.vessel
 .phpunit.result.cache
 .php_cs.cache
 Homestead.json
