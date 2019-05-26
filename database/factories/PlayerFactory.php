@@ -24,9 +24,13 @@ $factory->define(Player::class, function (Faker $faker) {
 });
 
 $factory->state(Player::class, 'wicketkeeper', [
-    'playing_role_id' => PlayingRole::wicketkeeper()->pluck('id')->first(),
+    'playing_role_id' => function () {
+        return PlayingRole::wicketkeeper()->pluck('id')->first();
+    },
     'bowling_style_id' => null,
-    'fielding_position_id' => FieldingPosition::wicketkeeper()->pluck('id')->first(),
+    'fielding_position_id' => function () {
+        return FieldingPosition::wicketkeeper()->pluck('id')->first();
+    },
 ]);
 
 $factory->state(Player::class, 'batsman', function ($faker) {
